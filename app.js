@@ -1,5 +1,5 @@
-// Vervang dit met de werkelijke ID van de Google Sheet (te vinden in de URL van de sheet)
-const SHEET_ID = '1YdP2_mH86QvD96XkuNboh43SgY_W6AJzukt0QUiRXss';
+// Vervang dit met de werkelijke ID van de Google Sheet
+const SHEET_ID = '1YdP2_mH86QvD96XkuNboh43SgY_W6AJzukt0QUiRXss'; 
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
 async function fetchSpreadsheetData() {
@@ -26,28 +26,63 @@ async function fetchSpreadsheetData() {
 
     } catch (error) {
         console.error("Fout bij het ophalen van de contactgegevens:", error);
-        // Eventueel fallback tekst tonen als de API faalt
     }
 }
 
 function updateDOM(config) {
-    // Vul de tekstvelden in
-    if(config.adres) document.getElementById('data-adres').innerText = config.adres;
-    if(config.email) {
-        document.getElementById('data-email').innerText = config.email;
-        document.getElementById('donate-email').innerText = config.email;
-        document.getElementById('link-email').href = `mailto:${config.email}`;
+    // Klasse 'italic text-gray-400' weghalen zodra de data er is voor een strakke look
+    const removeLoadingStyle = (element) => {
+        if (element) {
+            element.classList.remove('italic', 'text-gray-400');
+        }
+    };
+
+    // Vul het adres in
+    if (config.adres) {
+        const adresEl = document.getElementById('data-adres');
+        adresEl.innerText = config.adres;
+        removeLoadingStyle(adresEl);
     }
-    if(config.iban) document.getElementById('data-iban').innerText = config.iban;
-    if(config.kvk) document.getElementById('data-kvk').innerText = config.kvk;
     
-    if(config.telefoon) {
-        document.getElementById('data-telefoon').innerText = config.telefoon;
+    // Vul de e-mailadressen in
+    if (config.email) {
+        const emailEl = document.getElementById('data-email');
+        const donateEmailEl = document.getElementById('donate-email');
+        
+        emailEl.innerText = config.email;
+        donateEmailEl.innerText = config.email;
+        document.getElementById('link-email').href = `mailto:${config.email}`;
+        
+        removeLoadingStyle(emailEl);
+        removeLoadingStyle(donateEmailEl);
+    }
+    
+    // Vul de IBAN in
+    if (config.iban) {
+        const ibanEl = document.getElementById('data-iban');
+        ibanEl.innerText = config.iban;
+        removeLoadingStyle(ibanEl);
+    }
+    
+    // Vul het KvK-nummer in (indien aangepast in sheet, anders blijft HTML fallback)
+    if (config.kvk) {
+        document.getElementById('data-kvk').innerText = config.kvk;
+    }
+    
+    // Vul het telefoonnummer in
+    if (config.telefoon) {
+        const telEl = document.getElementById('data-telefoon');
+        telEl.innerText = config.telefoon;
         document.getElementById('link-telefoon').href = `tel:${config.telefoon}`;
+        removeLoadingStyle(telEl);
     }
 
-    // Verwijder loading klasses
-    document.querySelectorAll('.loading').forEach(el => el.classList.remove('loading'));
+    // NIEUW: Vul de openingstijden in
+    if (config.openingstijden) {
+        const openingEl = document.getElementById('data-openingstijden');
+        openingEl.innerText = config.openingstijden;
+        removeLoadingStyle(openingEl);
+    }
 }
 
 // Start het ophalen zodra de pagina geladen is
