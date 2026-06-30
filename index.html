@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stichting ReWear - Kledingbank Bladel</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rewearRood: '#A81C1C',
+                        rewearBlauw: '#111B36',
+                        rewearCreme: '#FDFBF7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-rewearCreme text-rewearBlauw font-sans antialiased leading-relaxed">
+
+    <header class="text-center px-4 py-12 max-w-4xl mx-auto">
+        <img src="logo.png" alt="Stichting ReWear Logo" class="max-w-[200px] h-auto mx-auto mb-6">
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl mb-3 text-rewearBlauw">Stichting ReWear</h1>
+        <p class="text-lg sm:text-xl font-semibold text-rewearRood mb-4">Draag bij. Draag door. Draag ReWear.</p>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-8">
+            Wij geloven dat iedereen recht heeft op kleding waarin zij zich goed voelen. Door kleding een tweede leven te geven maken we mode duurzamer, betaalbaarder en toegankelijk voor iedereen...
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+            <a href="#contact" class="inline-block bg-rewearRood text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-red-800 transition duration-200">
+            Neem contact op
+            </a>
+            <a href="#kleding doneren" class="inline-block bg-rewearBlauw text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-800 transition duration-200">
+            Kleding doneren 
+            </a>
+        </div>
+        
+    </header>
+
+    <hr class="border-t border-gray-200 my-4 max-w-4xl mx-auto">
+
+    <section class="max-w-3xl mx-auto px-6 py-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-rewearBlauw">Over ReWear</h2>
+        <p class="text-gray-700">
+            Stichting ReWear zet zich in voor duurzaamheid, maatschappelijke ondersteuning en toegankelijkheid van kleding voor iedereen...
+        </p>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 py-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-rewearBlauw">Onze missie</h2>
+        <ul class="space-y-2 text-gray-700 font-medium">
+            <li class="flex items-center text-rewearRood"><span class="text-rewearBlauw mr-2">✓</span> Kledingverspilling verminderen</li>
+            <li class="flex items-center text-rewearRood"><span class="text-rewearBlauw mr-2">✓</span> Duurzaam hergebruik stimuleren</li>
+            <li class="flex items-center text-rewearRood"><span class="text-rewearBlauw mr-2">✓</span> Betaalbare kleding beschikbaar maken</li>
+            <li class="flex items-center text-rewearRood"><span class="text-rewearBlauw mr-2">✓</span> Mensen ondersteunen die tijdelijk hulp nodig hebben</li>
+            <li class="flex items-center text-rewearRood"><span class="text-rewearBlauw mr-2">✓</span> Bijdragen aan een circulaire samenleving</li>
+        </ul>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-rewearBlauw">Wat doen wij?</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-2 text-rewearRood">Kledinginzameling</h3>
+                <p class="text-gray-600 text-sm">Wij ontvangen kledingdonaties van particulieren en organisaties.</p>
+            </div>
+            <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-2 text-rewearRood">Selectie en hergebruik</h3>
+                <p class="text-gray-600 text-sm">Alle kleding wordt gecontroleerd en gesorteerd.</p>
+            </div>
+            <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-2 text-rewearRood">Ondersteuning</h3>
+                <p class="text-gray-600 text-sm">Via samenwerkingen met maatschappelijke partners helpen wij mensen die kleding nodig hebben.</p>
+            </div>
+            <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-2 text-rewearRood">Duurzaamheid</h3>
+                <p class="text-gray-600 text-sm">Door kleding een tweede leven te geven verminderen we afval en verspilling.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-200 my-4 max-w-4xl mx-auto">
+
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-rewearBlauw">Contact & Gegevens</h2>
+        <div class="space-y-2 text-gray-700">
+            <p><strong class="text-rewearBlauw">Adres:</strong> <span id="data-adres" class="italic text-gray-400">Laden...</span></p>
+            <p><strong class="text-rewearBlauw">E-mail:</strong> <span id="data-email" class="italic text-gray-400">Laden...</span></p>
+            <p><strong class="text-rewearBlauw">KvK:</strong> <span id="data-kvk" class="italic text-gray-400">Laden...</span></p>
+            <p><strong class="text-rewearBlauw">IBAN:</strong> <span id="data-iban" class="italic text-gray-400">Laden...</span></p>
+        </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 py-10 mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-rewearBlauw">Doneren</h2>
+        <p class="text-gray-700 mb-4">Wilt u Stichting ReWear ondersteunen met een financiële bijdrage, kledingdonatie of samenwerking?</p>
+        <p class="text-gray-700">
+            Mail naar: <a href="" id="link-email" class="text-rewearRood font-semibold hover:underline"><span id="donate-email" class="italic text-gray-400">Laden...</span></a> 
+            of bel <a href="" id="link-telefoon" class="text-rewearRood font-semibold hover:underline"><span id="data-telefoon" class="italic text-gray-400">Laden...</span></a>
+        </p>
+    </section>
+
+    <footer class="bg-rewearBlauw text-white text-center py-6 px-4">
+        <p class="text-sm">&copy; 2026 Stichting ReWear Bladel | <a href="privacyverklaring.html" class="underline hover:text-gray-300 transition">Privacyverklaring</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
