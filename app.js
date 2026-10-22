@@ -45,6 +45,7 @@ function updateDOM(config) {
     
     if(config.telefoon) {
         document.getElementById('data-telefoon').innerText = config.telefoon;
+        document.getElementById('donate-telefoon').innerText = config.telefoon;
         document.getElementById('link-telefoon').href = `tel:${config.telefoon}`;
     }
 
