@@ -38,8 +38,10 @@ function updateDOM(config) {
         document.getElementById('donate-email').innerText = config.email;
         document.getElementById('link-email').href = `mailto:${config.email}`;
     }
-    if(config.iban) document.getElementById('data-iban').innerText = config.iban;
     if(config.kvk) document.getElementById('data-kvk').innerText = config.kvk;
+    if(config.openingstijden) {
+        document.getElementById('data-openingstijden').innerText = config.openingstijden;
+    }
     
     if(config.telefoon) {
         document.getElementById('data-telefoon').innerText = config.telefoon;
